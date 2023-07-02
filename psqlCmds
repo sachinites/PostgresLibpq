@@ -1,0 +1,59 @@
+Change Passwod authenticaation for user postgres :
+======================
+In file /etc/postgresql/12/main/pb_hba.conf , add below line :
+local   all             postgres                                peer
+local   all             postgres                                md5      <<<  new line added
+
+
+Restart postgresql Server
+=========================
+sudo systemctl start postgresql@12-main
+
+
+Set New Passwd for User 'Postgres'
+=========================
+Login as user postgres on ur system : sudo -i -u postgres
+psql
+ALTER USER postgres PASSWORD 'new_password';
+
+
+Login as user postgres into DB postgres
+=============================
+psql -h localhost -U postgres -d postgres
+
+
+Create Table :
+============================
+CREATE TABLE students (
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL PRIMARY KEY,
+  is_jackpot BOOLEAN,
+  enrollment_date DATE,
+  price_paid DECIMAL(10, 2),
+  ph_no VARCHAR(20)
+);
+
+INSERT INTO students (name, email, is_jackpot, enrollment_date, price_paid, ph_no)
+VALUES ('Shivani Nigam', 'shivani.nigam20@gmail.com', false, '2023-07-01', 0, '9686081839');
+
+UPDATE students
+SET is_jackpot = true
+WHERE email = 'sachinites@gmail.com';
+
+=================================
+
+My Application Passwd is : kcryywrjdlwjbxzj
+=================================
+
+
+
+Run all SQL commands written in txt file :
+==================================
+psql -U postgres -h localhost -d postgres -f emails.txt
+
+
+
+
+
+
+
