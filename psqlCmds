@@ -34,7 +34,11 @@ CREATE TABLE students (
 );
 
 INSERT INTO students (name, email, is_jackpot, enrollment_date, price_paid, ph_no)
-VALUES ('Shivani Nigam', 'shivani.nigam20@gmail.com', false, '2023-07-01', 0, '9686081839');
+VALUES ('adriengaucher02@gmail.com', adriengaucher02@gmail.com', false, '2023-07-04', 0, '-');
+
+INSERT INTO students (name, email, is_jackpot, enrollment_date, price_paid, ph_no)
+VALUES ('woradorn.laon@gmail.com', 'woradorn.laon@gmail.com', false, '2023-07-02', 0, '-');
+
 
 UPDATE students
 SET is_jackpot = true

@@ -14,7 +14,7 @@ def read_emails_from_excel(file_path, sheet_name, email_column_index):
     return emails
 
 # Example usage
-file_path = '/home/gns3/EmailParser.xlsx'  # Replace with the actual file path
+file_path = '/home/gns3/PostgresLibpq/EmailParser.xlsx'  # Replace with the actual file path
 sheet_name = 'Sheet1'  # Replace with the actual sheet name
 email_column_index = 1  # Assuming the email column is the second column (index 1)
 
